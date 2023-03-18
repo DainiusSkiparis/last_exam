@@ -32,16 +32,6 @@ public class LastExamApplication {
 	}
 
 	private void testCase1() {
-//		Player player1 = new Player();
-//		player1.setFirstname("Jonas");
-//		player1.setLastname("Jonaitis");
-//		this.playerService.savePlayer(player1);
-//
-//		Player player2 = new Player();
-//		player2.setFirstname("Petras");
-//		player2.setLastname("Petraitis");
-//		this.playerService.savePlayer(player2);
-
 		this.playerService.savePlayerList(generatePlayers(5));
 	}
 
