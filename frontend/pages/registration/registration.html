@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+        integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+
+    <script type="module" src="script.js"></script>
+
+    <link rel="stylesheet" href="/style.css">
+    <title>Chess Tournament 2023</title>
+</head>
+
+<body>
+    <div class="image-3 bg-image"></div>
+
+    <nav class="navbar bg-dark nav justify-content-center" data-bs-theme="dark">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pages/list/list.html">Participants</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pages/registration/registration.html">Registration</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="left-side">
+        </div>
+
+        <form class="center card">
+            <h2>Registration to tournament!</h2>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="firstnameInput" placeholder="First name">
+                <label for="firstnameInput">First name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="lastnameInput" placeholder="Last name">
+                <label for="lastnameInput">Last name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                <label for="emailInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="personalCodeInput" pattern="[3-6][0-9]{10}" minlength="11"
+                    maxlength="11" placeholder="Personal code" inputmode="numeric">
+                <label for="personalCodeInput">Personal code</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="startDateInput"
+                    placeholder="Date when started playing chess" min="1900-01-01">
+                <label for="startDateInput">Date when started playing chess</label>
+            </div>
+
+            <div class="gap-2">
+                <button type="submit" class="btn btn-primary btn-lg" id="submitButton">
+                    Submit
+                </button>
+                <button type="reset" class="btn btn-secondary btn-lg" id="cancelButton">
+                    Cancel
+                </button>
+            </div>
+        </form>
+
+        <div class="right-side">
+        </div>
+
+    </main>
+    <footer class="bg-dark text-center">
+        <ul>
+            <li>Chess.com</li>
+            <li>Chess Federation of America</li>
+            <li>Hilton Hotels & Resorts</li>
+        </ul>
+        <p>© 2023 Chess Tournament. All rights reserved.</p>
+    </footer>
+
+</body>
+
+
+</html>

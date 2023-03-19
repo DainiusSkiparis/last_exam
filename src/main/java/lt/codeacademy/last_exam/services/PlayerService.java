@@ -14,17 +14,17 @@ public class PlayerService {
 
     private final PlayerRepository playerRepository;
 
-    public Player getPlayerById(Long id) {
-        Optional<Player> player = this.playerRepository.findById(id);
+//    public Player getPlayerById(Long id) {
+//        Optional<Player> player = this.playerRepository.findById(id);
+//
+//        if (!player.isPresent()) {
+//            return null;
+//        }
+//
+//        return player.get();
+//    }
 
-        if (!player.isPresent()) {
-            return null;
-        }
-
-        return player.get();
-    }
-
-    public void savePlayer(Player player) {
+    public void addPlayer(Player player) {
         this.playerRepository.saveAndFlush(player);
     }
 
@@ -32,4 +32,7 @@ public class PlayerService {
         this.playerRepository.saveAllAndFlush(players);
     }
 
+    public List<Player> getAllPlayers() {
+        return this.playerRepository.findAll();
+}
 }
