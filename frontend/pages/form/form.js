@@ -8,7 +8,6 @@ export function addInputs() {
     const emailInput = createInputElement("email", myclass, "emailInput", "Email address", true);
     const personalCodeInput = createInputElement("text", myclass, "personalCodeInput", "Personal code", true);
     const startDateInput = createInputElement("date", myclass, "startDateInput", "Date when started playing chess", true);
-    startDateInput.setAttribute("min", "1900-01-01");
 
     // Append the elements to the form
     form.appendChild(firstNameInput);
@@ -24,6 +23,7 @@ export function addAttributes() {
     personalCodeInput.setAttribute("maxlength", "11");
     personalCodeInput.setAttribute("placeholder", "Personal code");
     personalCodeInput.setAttribute("inputmode", "numeric");
+    startDateInput.setAttribute("min", "1900-01-01");
 }
 
 export function addRegistrationButtons() {
