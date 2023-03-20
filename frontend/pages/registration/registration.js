@@ -26,7 +26,11 @@ const submitButton = document.getElementById("addSubmitButton");
 submitButton.addEventListener("click", async (e) => {
     e.preventDefault();
     const form = document.querySelector("form");
-    await handleFormSubmit(form);
+    if (form.checkValidity()) {
+        await handleFormSubmit(form);
+    } else {
+        form.reportValidity();
+    }
 });
 
 const cancelButton = document.getElementById("addCancelButton");

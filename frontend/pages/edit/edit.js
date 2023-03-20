@@ -1,4 +1,4 @@
-import { addInputs, addEditButtons, form, removePersonalCodeInput } from "../form/form.js";
+import { addInputs, addButtons, form, removePersonalCodeInput } from "../form/form.js";
 import { getPlayerById, patchPlayer } from "../../commons/requests.js";
 
 const heading = document.createElement("h2");
@@ -6,7 +6,7 @@ heading.textContent = "Edit tournament player!";
 form.appendChild(heading);
 
 addInputs();
-addEditButtons();
+addButtons();
 removePersonalCodeInput()
 
 let oldPlayerData;
@@ -34,14 +34,18 @@ const handleFormEdit = async (form) => {
     window.location.replace("../list/list.html");
 };
 
-const submitButton = document.getElementById("editSubmitButton");
+const submitButton = document.getElementById("addSubmitButton");
 submitButton.addEventListener("click", async (e) => {
     e.preventDefault();
     const form = document.querySelector("form");
-    await handleFormEdit(form);
+    if (form.checkValidity()) {
+        await handleFormEdit(form);
+    } else {
+        form.reportValidity();
+    }
 });
 
-const cancelButton = document.getElementById("editCancelButton");
+const cancelButton = document.getElementById("addCancelButton");
 cancelButton.addEventListener("click", async (e) => {
     e.preventDefault();
     window.location.replace("../list/list.html");

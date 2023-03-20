@@ -18,24 +18,25 @@ export function addInputs() {
 }
 
 export function addAttributes() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
+    const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
     personalCodeInput.setAttribute("pattern", "[3-6][0-9]{10}");
     personalCodeInput.setAttribute("minlength", "11");
     personalCodeInput.setAttribute("maxlength", "11");
     personalCodeInput.setAttribute("placeholder", "Personal code");
     personalCodeInput.setAttribute("inputmode", "numeric");
     startDateInput.setAttribute("min", "1900-01-01");
-}
+    startDateInput.setAttribute("max", formattedDate);
 
-export function addRegistrationButtons() {
+}
+export function addButtons() {
     const submitButton = createButtonElement("Submit", "btn-primary", "addSubmitButton");
-    const submitCancelButton = createButtonElement("Cancel", "btn-secondary", "addCancelButton");
-    form.appendChild(createDivElement([submitButton, submitCancelButton]));
-}
-
-export function addEditButtons() {
-    const editSubmitButton = createButtonElement("Submit", "btn-primary", "editSubmitButton");
-    const editCancelButton = createButtonElement("Cancel", "btn-secondary", "editCancelButton");
-    form.appendChild(createDivElement([editSubmitButton, editCancelButton]));
+    const cancelButton = createButtonElement("Cancel", "btn-secondary", "addCancelButton");
+    form.appendChild(createDivElement([submitButton, cancelButton]));
 }
 
 export function removePersonalCodeInput() {
