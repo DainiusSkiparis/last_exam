@@ -7,12 +7,6 @@ export function addInputs() {
     const lastnameInput = createInputElement("text", myclass, "lastnameInput", "Last name", true);
     const emailInput = createInputElement("email", myclass, "emailInput", "Email address", true);
     const personalCodeInput = createInputElement("text", myclass, "personalCodeInput", "Personal code", true);
-    personalCodeInput.setAttribute("pattern", "[3-6][0-9]{10}");
-    personalCodeInput.setAttribute("minlength", "11");
-    personalCodeInput.setAttribute("maxlength", "11");
-    personalCodeInput.setAttribute("placeholder", "Personal code");
-    personalCodeInput.setAttribute("inputmode", "numeric");
-
     const startDateInput = createInputElement("date", myclass, "startDateInput", "Date when started playing chess", true);
     startDateInput.setAttribute("min", "1900-01-01");
 
@@ -22,6 +16,14 @@ export function addInputs() {
     form.appendChild(emailInput);
     form.appendChild(personalCodeInput);
     form.appendChild(startDateInput);
+}
+
+export function addAttributes() {
+    personalCodeInput.setAttribute("pattern", "[3-6][0-9]{10}");
+    personalCodeInput.setAttribute("minlength", "11");
+    personalCodeInput.setAttribute("maxlength", "11");
+    personalCodeInput.setAttribute("placeholder", "Personal code");
+    personalCodeInput.setAttribute("inputmode", "numeric");
 }
 
 export function addRegistrationButtons() {
