@@ -44,5 +44,5 @@ submitButton.addEventListener("click", async (e) => {
 const cancelButton = document.getElementById("editCancelButton");
 cancelButton.addEventListener("click", async (e) => {
     e.preventDefault();
-    window.history.back();
+    window.location.replace("../list/list.html");
 });

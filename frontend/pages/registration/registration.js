@@ -17,8 +17,9 @@ const handleFormSubmit = async (form) => {
         chessStartDate: form.startDateInput.value,
     };
     await savePlayer(player);
-    window.location.reload();
+    window.history.back();
 };
+
 
 const submitButton = document.getElementById("addSubmitButton");
 submitButton.addEventListener("click", async (e) => {

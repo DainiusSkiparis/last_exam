@@ -62,4 +62,11 @@ public class PlayerService {
 
         playerRepository.saveAndFlush(oldPlayer);
     }
+    public void replacePlayerById(Long id, Player player) {
+        if (!playerRepository.existsById(id)) {
+            return;
+        }
+        player.setId(id);
+        this.playerRepository.saveAndFlush(player);
+    }
 }

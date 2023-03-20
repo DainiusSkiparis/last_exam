@@ -77,28 +77,34 @@ const renderPlayerTableRows = async (players) => {
         editButton.classList.add("btn", "btn-primary");
         editButton.setAttribute("id", "editButton");
         editButton.innerText = "Edit";
+        actionCell.appendChild(editButton);
 
         editButton.addEventListener("click", async () => {
             window.location.replace(`../edit/edit.html?id=${p.id}`);
         });
-        actionCell.appendChild(editButton);
 
         const replaceButton = document.createElement("button");
         replaceButton.classList.add("btn", "btn-warning");
-        replaceButton.innerText = "Rreplace";
+        replaceButton.setAttribute("id", "replaceButton");
+        replaceButton.innerText = "Replace";
         actionCell.appendChild(replaceButton);
+
+        replaceButton.addEventListener("click", async () => {
+            window.location.replace(`../replace/replace.html?id=${p.id}`);
+        });
 
         const deleteButton = document.createElement("button");
         deleteButton.classList.add("btn", "btn-danger");
+        deleteButton.setAttribute("id", "deleteButton")
         deleteButton.innerText = "Delete";
         actionCell.appendChild(deleteButton);
-        playerRow.appendChild(actionCell);
 
         deleteButton.addEventListener("click", async () => {
             await deletePlayerById(p.id);
             window.location.reload();
         });
 
+        playerRow.appendChild(actionCell);
         playerTableBody.appendChild(playerRow);
     });
 };

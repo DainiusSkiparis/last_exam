@@ -44,3 +44,15 @@ export const patchPlayer = async (player, id) => {
 
   alert(`[Player ${id}] updated successfully!`);
 };
+
+export const putPlayer = async (player, id) => {
+  await fetch(`${API_BASE_URL}/player/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(player),
+  });
+
+  alert(`[Player ${id}] replaced successfully!`);
+};

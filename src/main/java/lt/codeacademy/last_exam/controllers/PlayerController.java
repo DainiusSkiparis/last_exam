@@ -40,11 +40,11 @@ public class PlayerController {
     public void editPlayerById(@PathVariable Long id, @RequestBody AddPlayerDTO playerDTO) {
         this.playerService.editPlayerById(id, PlayerConverter.convertAddPlayerDtoToEntity(playerDTO));
     }
-//
-//    @PutMapping("/{id}")
-//    public void replacePlayerById(@PathVariable Long id, @RequestBody AddPlayerDTO playerDTO) {
-//        this.playerService.replacePlayerById(id, PlayerConverter.convertAddPlayerDtoToEntity(playerDTO));
-//    }
+
+    @PutMapping("/{id}")
+    public void replacePlayerById(@PathVariable Long id, @RequestBody AddPlayerDTO playerDTO) {
+        this.playerService.replacePlayerById(id, PlayerConverter.convertAddPlayerDtoToEntity(playerDTO));
+    }
 //
 //    @GetMapping("/{id}/name")
 //    public String getPlayerNameById(@PathVariable Long id) {
