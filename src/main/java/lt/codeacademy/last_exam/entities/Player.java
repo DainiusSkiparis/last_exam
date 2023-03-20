@@ -20,5 +20,4 @@ public class Player {
     private String email;
     private String personalCode;
     private LocalDate chessStartDate;
-
 }

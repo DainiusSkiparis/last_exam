@@ -1,4 +1,4 @@
-import { addInputs, addButtons, form, removePersonalCodeInput } from "../form/form.js";
+import { addInputs, addAttributes, addButtons, form, removePersonalCodeInput } from "../form/form.js";
 import { getPlayerById, patchPlayer } from "../../commons/requests.js";
 
 const heading = document.createElement("h2");
@@ -6,6 +6,7 @@ heading.textContent = "Edit tournament player!";
 form.appendChild(heading);
 
 addInputs();
+addAttributes();
 addButtons();
 removePersonalCodeInput()
 

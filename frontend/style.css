@@ -39,8 +39,13 @@ h1 {
   margin-bottom: 20px;
 }
 
-p {
+p,
+nav {
   font-size: 1.2rem;
+}
+
+nav {
+  font-weight: 500;
 }
 
 tr button:not(:first-child) {
@@ -90,12 +95,12 @@ footer ul {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.bg-image.image-1 {
+.bg-image.home-img {
   background-image: url("img/page-1.jpg");
 }
-.bg-image.image-2 {
+.bg-image.list-img {
   background-image: url("img/page-2.jpg");
 }
-.bg-image.image-3 {
+.bg-image.form-img {
   background-image: url("img/page-3.jpg");
 }/*# sourceMappingURL=style.css.map */

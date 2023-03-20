@@ -1,14 +1,11 @@
 package lt.codeacademy.last_exam.converters;
 
 import lt.codeacademy.last_exam.dto.*;
-import lt.codeacademy.last_exam.entities.Player;
-
-
+import lt.codeacademy.last_exam.entities.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class PlayerConverter {
-
     public static Player convertAddPlayerDtoToEntity(AddPlayerDTO playerDTO) {
         Player player = null;
         if (playerDTO != null) {
@@ -21,7 +18,6 @@ public abstract class PlayerConverter {
         }
         return player;
     }
-
     public static PlayerDTO convertPlayerEntityToDto(Player player) {
         PlayerDTO playerDTO = null;
         if (player != null) {
@@ -35,7 +31,6 @@ public abstract class PlayerConverter {
         }
         return playerDTO;
     }
-
     public static List<PlayerDTO> convertPlayerEntityListToDto(List<Player> playerList) {
         List<PlayerDTO> playerDTOList = null;
         for (Player p : playerList) {
@@ -46,5 +41,4 @@ public abstract class PlayerConverter {
         }
         return playerDTOList;
     }
-
 }

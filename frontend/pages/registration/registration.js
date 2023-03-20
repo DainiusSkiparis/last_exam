@@ -1,4 +1,4 @@
-import { addInputs, addAttributes, addRegistrationButtons, form } from "../form/form.js";
+import { addInputs, addAttributes, addButtons, form } from "../form/form.js";
 import { savePlayer } from "../../commons/requests.js";
 
 const heading = document.createElement("h2");
@@ -7,7 +7,7 @@ form.appendChild(heading);
 
 addInputs();
 addAttributes();
-addRegistrationButtons();
+addButtons();
 
 const handleFormSubmit = async (form) => {
     const player = {
@@ -20,7 +20,6 @@ const handleFormSubmit = async (form) => {
     await savePlayer(player);
     window.history.back();
 };
-
 
 const submitButton = document.getElementById("addSubmitButton");
 submitButton.addEventListener("click", async (e) => {

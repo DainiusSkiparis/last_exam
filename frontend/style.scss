@@ -49,8 +49,13 @@ h1 {
     margin-bottom: 20px;
 }
 
-p {
+p,
+nav {
     font-size: 1.2rem;
+}
+
+nav {
+    font-weight: 500;
 }
 
 tr {
@@ -106,15 +111,15 @@ footer {
         background-color: rgba(0, 0, 0, 0.5);
     }
 
-    &.image-1 {
+    &.home-img {
         background-image: $bgImg-Home;
     }
 
-    &.image-2 {
+    &.list-img {
         background-image: $bgImg-List;
     }
 
-    &.image-3 {
+    &.form-img {
         background-image: $bgImg-Reg;
     }
 }

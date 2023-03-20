@@ -1,4 +1,4 @@
-import { addInputs, addButtons, form } from "../form/form.js";
+import { addInputs, addAttributes, addButtons, form } from "../form/form.js";
 import { getPlayerById, putPlayer } from "../../commons/requests.js";
 
 const heading = document.createElement("h2");
@@ -6,8 +6,8 @@ heading.textContent = "Replace tournament player!";
 form.appendChild(heading);
 
 addInputs();
+addAttributes();
 addButtons();
-
 
 let oldPlayerData;
 const loadPlayer = async () => {
@@ -28,7 +28,7 @@ const handleFormReplace = async (form) => {
         chessStartDate: form.startDateInput.value,
     };
     await putPlayer(player, oldPlayerData.id);
-    window.history.back();
+    window.location.replace("../list/list.html");
 };
 
 const submitButton = document.getElementById("addSubmitButton");

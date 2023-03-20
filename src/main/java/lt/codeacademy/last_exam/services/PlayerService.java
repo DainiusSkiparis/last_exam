@@ -11,16 +11,13 @@ import java.util.Optional;
 @AllArgsConstructor
 @Service
 public class PlayerService {
-
     private final PlayerRepository playerRepository;
-
     public Player getPlayerById(Long id) {
         Optional<Player> player = this.playerRepository.findById(id);
 
         if (!player.isPresent()) {
             return null;
         }
-
         return player.get();
     }
     public void addPlayer(Player player) {
@@ -37,13 +34,10 @@ public class PlayerService {
     }
     public void editPlayerById(Long id, Player player) {
         Optional<Player> oldPlayerOptional = playerRepository.findById(id);
-
         if (!oldPlayerOptional.isPresent()) {
             return;
         }
-
         Player oldPlayer = oldPlayerOptional.get();
-
         if (player.getFirstname() != null && !oldPlayer.getFirstname().equals(player.getFirstname())){
             oldPlayer.setFirstname(player.getFirstname());
         }
@@ -59,7 +53,6 @@ public class PlayerService {
         if (player.getChessStartDate() != null && !oldPlayer.getChessStartDate().equals(player.getChessStartDate())){
             oldPlayer.setChessStartDate(player.getChessStartDate());
         }
-
         playerRepository.saveAndFlush(oldPlayer);
     }
     public void replacePlayerById(Long id, Player player) {
