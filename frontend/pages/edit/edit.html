@@ -5,13 +5,24 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>Chess Tournament 2023</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+        integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="/style.css">
 
-    <script type="module" src="index.js"></script>
+    <script type="module" src="edit.js"></script>
+
+    <title>Chess Tournament 2023</title>
+</head>
 
 <body>
-    <div class="image-1 bg-image"></div>
+    <div class="image-3 bg-image"></div>
 
     <nav class="navbar bg-dark nav justify-content-center" data-bs-theme="dark">
         <ul class="nav">
@@ -29,22 +40,13 @@
 
     <main>
         <div class="left-side">
-            <h1>Welcome to the Chess Tournament</h1>
-            <p>Join us for our annual chess tournament, where players from around the world come to compete against each
-                other for the grand prize. This year's tournament will be held at the Hilton Hotel in New York City from
-                June 1st to June 5th.</p>
         </div>
 
-        <div class="center">
-            <div id="page-container"></div>
-        </div>
+        <form class="center card" id="tournamentForm">
 
-        <div class="left-side">
-            <div class="buttons">
-                <p>Register now to compete for the grand prize at the Chess Tournament in New York City!</p>
-                <button type="button" id="register-button" class="btn btn-primary"
-                    onclick="window.location.href = 'pages/registration/registration.html'">Registration!</button>
-            </div>
+        </form>
+
+        <div class="right-side">
         </div>
 
     </main>
@@ -58,5 +60,6 @@
     </footer>
 
 </body>
+
 
 </html>

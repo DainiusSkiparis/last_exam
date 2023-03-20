@@ -26,26 +26,26 @@ public class PlayerController {
         this.playerService.addPlayer(PlayerConverter.convertAddPlayerDtoToEntity(playerDTO));
     }
 
-//    @DeleteMapping("/{id}")
-//    public void deletePlayerById(@PathVariable Long id){
-//        this.playerService.deletePlayerById(id);
-//    }
+    @DeleteMapping("/{id}")
+    public void deletePlayerById(@PathVariable Long id){
+        this.playerService.deletePlayerById(id);
+    }
 
-//    @GetMapping("/{id}")
-//    public PlayerDTO getPlayerById(@PathVariable Long id) {
-//        return PlayerConverter.convertPlayerEntityToDto(this.playerService.getPlayerById(id));
-//    }
+    @GetMapping("/{id}")
+    public PlayerDTO getPlayerById(@PathVariable Long id) {
+        return PlayerConverter.convertPlayerEntityToDto(this.playerService.getPlayerById(id));
+    }
 
-//    @PatchMapping("/{id}")
-//    public void editPlayerById(@PathVariable Long id, @RequestBody AddPlayerDTO playerDTO) {
-//        this.playerService.editPlayerById(id, PlayerConverter.convertAddPlayerDtoToEntity(playerDTO));
-//    }
-
+    @PatchMapping("/{id}")
+    public void editPlayerById(@PathVariable Long id, @RequestBody AddPlayerDTO playerDTO) {
+        this.playerService.editPlayerById(id, PlayerConverter.convertAddPlayerDtoToEntity(playerDTO));
+    }
+//
 //    @PutMapping("/{id}")
 //    public void replacePlayerById(@PathVariable Long id, @RequestBody AddPlayerDTO playerDTO) {
 //        this.playerService.replacePlayerById(id, PlayerConverter.convertAddPlayerDtoToEntity(playerDTO));
 //    }
-
+//
 //    @GetMapping("/{id}/name")
 //    public String getPlayerNameById(@PathVariable Long id) {
 //        return this.playerService.getNameById(id);

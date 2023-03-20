@@ -1,4 +1,4 @@
-import { getPlayers } from "../../commons/requests.js";
+import { getPlayers, deletePlayerById } from "../../commons/requests.js";
 
 const calculateAge = (personalCode) => {
     const firstNumber = parseInt(personalCode[0]);
@@ -40,7 +40,6 @@ const getGenderFromPersonalCode = (personalCode) => {
 const renderPlayerTableRows = async (players) => {
 
     const playerTable = document.getElementById("playerTable");
-    console.log("111");
     const playerTableBody = document.querySelector("tbody");
     players.forEach((p) => {
         const playerRow = document.createElement("tr");
@@ -76,7 +75,12 @@ const renderPlayerTableRows = async (players) => {
 
         const editButton = document.createElement("button");
         editButton.classList.add("btn", "btn-primary");
+        editButton.setAttribute("id", "editButton");
         editButton.innerText = "Edit";
+
+        editButton.addEventListener("click", async () => {
+            window.location.replace(`../edit/edit.html?id=${p.id}`);
+        });
         actionCell.appendChild(editButton);
 
         const replaceButton = document.createElement("button");
@@ -89,6 +93,11 @@ const renderPlayerTableRows = async (players) => {
         deleteButton.innerText = "Delete";
         actionCell.appendChild(deleteButton);
         playerRow.appendChild(actionCell);
+
+        deleteButton.addEventListener("click", async () => {
+            await deletePlayerById(p.id);
+            window.location.reload();
+        });
 
         playerTableBody.appendChild(playerRow);
     });

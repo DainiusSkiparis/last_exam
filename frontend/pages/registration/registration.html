@@ -14,9 +14,10 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
         integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
 
-    <script type="module" src="script.js"></script>
-
     <link rel="stylesheet" href="/style.css">
+
+    <script type="module" src="registration.js"></script>
+
     <title>Chess Tournament 2023</title>
 </head>
 
@@ -41,40 +42,8 @@
         <div class="left-side">
         </div>
 
-        <form class="center card">
-            <h2>Registration to tournament!</h2>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="firstnameInput" placeholder="First name">
-                <label for="firstnameInput">First name</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="lastnameInput" placeholder="Last name">
-                <label for="lastnameInput">Last name</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
-                <label for="emailInput">Email address</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="personalCodeInput" pattern="[3-6][0-9]{10}" minlength="11"
-                    maxlength="11" placeholder="Personal code" inputmode="numeric">
-                <label for="personalCodeInput">Personal code</label>
-            </div>
+        <form class="center card" id="tournamentForm">
 
-            <div class="form-floating mb-3">
-                <input type="date" class="form-control" id="startDateInput"
-                    placeholder="Date when started playing chess" min="1900-01-01">
-                <label for="startDateInput">Date when started playing chess</label>
-            </div>
-
-            <div class="gap-2">
-                <button type="submit" class="btn btn-primary btn-lg" id="submitButton">
-                    Submit
-                </button>
-                <button type="reset" class="btn btn-secondary btn-lg" id="cancelButton">
-                    Cancel
-                </button>
-            </div>
         </form>
 
         <div class="right-side">
